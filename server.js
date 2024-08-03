@@ -5,12 +5,16 @@ const dotenv = require('dotenv');
 dotenv.config();
 const connectDB= require('./dbConnection');
 
+const authRoutes = require('./routes/authRoutes')
+
 
 const app = express();
 
 app.use(express.json());//=app.use(bodyParser());
 app.use(cors());
 connectDB();
+
+app.use('/',authRoutes);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

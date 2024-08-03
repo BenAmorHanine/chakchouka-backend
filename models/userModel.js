@@ -26,11 +26,11 @@ const userSchema = new mongoose.Schema({
   },
 
     followers: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User' }],
-        
+
     follows: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User' }],
 
     bio: { type: String },
