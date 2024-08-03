@@ -45,18 +45,3 @@ exports.loginUser = async (req, res) => {
     res.status(401).json({ message: 'Invalid email or password' });
   }
 };
-
-exports.getUserProfile = async (req, res) => {
-  const user = await User.findById(req.user._id);
-
-  if (user) {
-    res.json({
-      name: user.name,
-      followers: user.followers,
-      follows:user.follows,
-      bio:user.bio
-    });
-  } else {
-    res.status(404).json({ message: 'User not found' });
-  }
-};

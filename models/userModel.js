@@ -34,6 +34,7 @@ const userSchema = new mongoose.Schema({
         ref: 'User' }],
 
     bio: { type: String },
+    picture: { type: String }
 
     },
     { timestamps: true});
